@@ -2,22 +2,44 @@
 
 
 
-Aufgabe:
+## 🪛 Aufgabe
+Baue eine Angular Anwendung nach folgenden Anforderungen von unserem fiktiven Product Owner.\
+🧘‍♂️ Kein Stress, es muss nicht alles geschafft und auch nicht perfekt werden.\
+🤙APIs werden verlinkt und API Keys zur Verfügung gestellt.\
+😉 Die Aufgaben sind inkrementell aufgebaut
 
-Baue eine Angular Anwendung, die Bilder von einer bereitgestellten REST Schnittstelle holt und darstellt.
-Du musst nicht wissen, was man alles mit der API machen kann, der einzig releveante Call wird vorgegeben.
-
-Photo Service: https://unsplash.com/documentation
-
-Url für Service:'https://api.unsplash.com/'
-client_id: [CLIENT_ID]
-GET '/photos?per_page=5&client_id=[CLIENT_ID]'
-GET '/search/photos?query=...&client_id=[CLIENT_ID]'
-
+1. Der Product Owner möchte eine Seite mit Bildern. Binde einen Service an, der Bilder von einer bereitgestellten REST Schnittstelle holt. Stelle diese Bilder dar.
+   - Bilder Service: https://unsplash.com/documentation
+   - api-key (client_id) = ```[PHOTO_CLIENT_ID]```
+   - ```GET 'https://api.unsplash.com/photos?per_page=5&client_id=[PHOTO_CLIENT_ID]'```
 
 
+2. Der Product Owner möchte die angezeigten Bilder kontrollieren. Füge ein Suchfeld hinzu. Wenn man einen Begriff eingibt, werden Bilder für diesen Begriff gesucht. 
+Unser PO hat gesagt, dass das Augenmerk hierbei auf Städtenamen liegen soll.
+    - GET '/search/photos?query=...&client_id=[PHOTO_CLIENT_ID]'
 
 
+3. Unser PO findet das Wetter voll wichtig. Deswegen möchte er nun, dass aktuelle Wetterdaten für die gesuchte Stadt angezeigt werden. Neben dem Bild.
+   - Wetter service: https://openweathermap.org/
+   - geocoding: https://openweathermap.org/api/geocoding-api 
+   - current weather: https://openweathermap.org/current#geo
+   - api-key (appid): ```[WEATHER_APP_ID]```
+   - e.g. ```GET 'http://api.openweathermap.org/data/2.5/weather?...&appid=[WEATHER_APP_ID]'```
+
+
+4. Zu guter Letzt möchte unser PO nicht nur das aktuelle Wetter, sondern auch einen Forecast über die nächsten 5 Tage
+    - forecast: https://openweathermap.org/forecast5
+
+
+5. Unser PO hat so gut verdient, dass er jetzt mehrere Wohnsitze hat. Folgerichtig, möchte er mehrere Städte angezeigt bekommen. 
+D.h. mit jeder Suche eine Stadt in die Liste hinzufügen, aber auch entfernen können.
+
+
+
+
+
+
+# Angular Readme starts here
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
